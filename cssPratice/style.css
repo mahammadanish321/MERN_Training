@@ -1,0 +1,373 @@
+/* =========================================================
+   My First CSS Project - Student Lab 4
+   ========================================================= */
+
+/* Task 10: Box Model */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Times New Roman", Times, serif;
+  background-color: #e6f2ff; /* Light blue background */
+  color: black;
+  line-height: 1.5;
+}
+
+/* Task 2: Container */
+.container {
+  width: 95%;
+  margin: 10px auto;
+}
+
+/* Task 4: Headings and Paragraphs */
+h1 {
+  font-size: 32px;
+  color: yellow;
+  text-shadow: 2px 2px 0px black;
+  margin-bottom: 5px;
+}
+
+h2 {
+  font-size: 22px;
+  color: darkblue;
+  background-color: lightyellow;
+  border: 2px solid black;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 18px;
+  color: darkred;
+  margin-bottom: 5px;
+}
+
+p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+}
+
+/* Task 8: Keyboard focus */
+a:focus,
+button:focus {
+  outline: 4px solid red;
+  background-color: yellow;
+}
+
+/* Common Section Box */
+.section-box {
+  background-color: white;
+  border: 3px solid black;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+/* =========================================================
+   Part 1 & 2: Header, Nav, Notice
+   ========================================================= */
+
+/* Task 2: Required ID #page-header */
+#page-header {
+  background-color: blue;
+  color: white;
+  text-align: center;
+  padding: 25px;
+  border-bottom: 5px solid red;
+}
+
+#page-header p {
+  color: white;
+  font-size: 16px;
+  font-style: italic;
+}
+
+/* Task 2 & Task 23: Sticky Navigation */
+#main-nav {
+  position: sticky;
+  top: 0;
+  background-color: darkgreen;
+  border: 3px solid black;
+  z-index: 99;
+}
+
+/* Task 16: Flexbox Navigation */
+#main-nav ul {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-around;
+  align-items: center;
+  padding: 8px 0;
+}
+
+#main-nav li a {
+  color: yellow;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 5px 10px;
+  background-color: black;
+  border: 1px solid white;
+}
+
+/* Task 8: Hover state */
+#main-nav li a:hover {
+  background-color: red;
+  color: white;
+}
+
+/* Task 2 & Task 6: Required ID #notice & class .notice */
+#notice,
+.notice {
+  background-color: #ffff99; /* Bright yellow */
+  border: 3px dashed red;
+  color: red;
+  font-weight: bold;
+  padding: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+#notice h3 {
+  color: red;
+}
+
+#notice p {
+  color: black;
+}
+
+/* =========================================================
+   Part 7: CSS Grid - Dashboard (Task 19, Task 20)
+   ========================================================= */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.grid-item {
+  background-color: #cceeff;
+  border: 2px solid darkblue;
+  padding: 10px;
+  text-align: center;
+}
+
+.grid-item h4 {
+  color: darkblue;
+  font-size: 15px;
+}
+
+.stat-number {
+  font-size: 24px;
+  font-weight: bold;
+  color: green;
+}
+
+/* =========================================================
+   Part 6 & 8: Flexbox Cards & Positioning (Task 5, 8, 17, 18, 21)
+   ========================================================= */
+/* Task 17: Flexbox Row */
+.card-container {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+/* Task 2 & Task 5: Required class .study-card */
+.study-card {
+  position: relative; /* Task 21: for absolute badge */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Task 18: alignment */
+  background-color: #f0f0f0;
+  border: 2px solid black;
+  padding: 15px;
+}
+
+/* Task 8: First card special styling */
+.study-card:first-child {
+  border: 3px solid green;
+  background-color: #e6ffe6;
+}
+
+/* Task 5: Modifier class */
+.card-featured {
+  border: 3px solid purple;
+  background-color: #f3e6ff;
+}
+
+/* Task 21: Absolute badge */
+.badge {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: red;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border: 1px solid black;
+}
+
+.card-featured .badge {
+  background-color: purple;
+}
+
+.btn {
+  background-color: green;
+  color: white;
+  font-weight: bold;
+  padding: 8px 12px;
+  border: 2px solid black;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.btn:hover {
+  background-color: darkgreen;
+}
+
+/* =========================================================
+   Part 2: Schedule Table (Task 2, Task 8)
+   ========================================================= */
+.table-wrapper {
+  overflow-x: auto;
+  margin-top: 10px;
+}
+
+table {
+  width: 100%;
+  border: 3px solid black;
+  border-collapse: collapse;
+}
+
+table th,
+table td {
+  border: 2px solid black;
+  padding: 8px;
+  text-align: left;
+}
+
+table th {
+  background-color: orange;
+  color: black;
+  font-size: 16px;
+}
+
+/* Task 8: Zebra striping */
+table tbody tr:nth-child(even) {
+  background-color: #ffffcc; /* Light yellow alternating row */
+}
+
+table tbody tr:nth-child(odd) {
+  background-color: white;
+}
+
+/* =========================================================
+   Part 2: Resources & Selectors (Task 2, Task 7)
+   ========================================================= */
+/* Task 2: Required class .resource-list */
+.resource-list {
+  margin-top: 10px;
+  padding-left: 0;
+}
+
+/* Task 7: Direct child selector */
+.resource-list > li {
+  list-style-type: none;
+  background-color: #ffe6e6;
+  border: 2px solid red;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+/* Task 7: Descendant selector */
+.resource-list li {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.resource-list ol {
+  margin-top: 5px;
+  padding-left: 30px;
+}
+
+/* =========================================================
+   Part 8: Fixed Utility Control (Task 22)
+   ========================================================= */
+.fixed-top-btn {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  background-color: red;
+  color: yellow;
+  border: 2px solid black;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 8px 12px;
+  z-index: 999;
+}
+
+.fixed-top-btn:hover {
+  background-color: yellow;
+  color: red;
+}
+
+/* =========================================================
+   Part 1 & 2: Footer (Task 2)
+   ========================================================= */
+#page-footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  border-top: 4px solid red;
+  margin-top: 30px;
+}
+
+#page-footer p {
+  color: white;
+  margin-bottom: 0;
+}
+
+/* =========================================================
+   Part 9: Media Queries (Task 24, Task 25)
+   ========================================================= */
+@media (max-width: 768px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card-container {
+    flex-direction: column;
+  }
+
+  #main-nav ul {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  #main-nav li a {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #page-header h1 {
+    font-size: 24px;
+  }
+}

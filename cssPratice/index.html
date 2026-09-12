@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Study Dashboard</title>
+  <!-- Task 3: Connect external CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Task 22: Fixed Utility Button (Back to Top) -->
+  <a href="#page-header" class="fixed-top-btn">↑ Top</a>
+
+  <!-- Task 2: Required ID #page-header -->
+  <header id="page-header">
+    <div class="container">
+      <h1>Student Study Dashboard</h1>
+      <p>My daily learning dashboard for HTML and CSS practice.</p>
+    </div>
+  </header>
+
+  <!-- Task 2: Required ID #main-nav (Task 16: Flexbox Nav, Task 23: Sticky) -->
+  <nav id="main-nav">
+    <div class="container">
+      <ul>
+        <li><a href="#page-header">Home</a></li>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#study-area">Study Cards</a></li>
+        <li><a href="#schedule">Schedule</a></li>
+        <li><a href="#resources">Resources</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Container -->
+  <main class="container">
+
+    <!-- Task 2 & Task 6: Required ID #notice & class .notice -->
+    <section id="notice" class="notice">
+      <h3>⚠️ Reminder Notice</h3>
+      <p>Please submit your Module 4 CSS assignment before Friday midnight!</p>
+    </section>
+
+    <!-- Task 19: Dashboard Grid (6 Items) -->
+    <section id="overview" class="section-box">
+      <h2>Dashboard Overview</h2>
+      <p>Quick statistics about my study progress.</p>
+      
+      <div class="dashboard-grid">
+        <div class="grid-item">
+          <h4>Total Hours</h4>
+          <p class="stat-number">25 hrs</p>
+        </div>
+        <div class="grid-item">
+          <h4>Completed Topics</h4>
+          <p class="stat-number">12</p>
+        </div>
+        <div class="grid-item">
+          <h4>Pending Labs</h4>
+          <p class="stat-number">2</p>
+        </div>
+        <div class="grid-item">
+          <h4>Quizzes Taken</h4>
+          <p class="stat-number">5</p>
+        </div>
+        <div class="grid-item">
+          <h4>Current Streak</h4>
+          <p class="stat-number">7 Days</p>
+        </div>
+        <div class="grid-item">
+          <h4>Attendance</h4>
+          <p class="stat-number">95%</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Task 2, Task 5, Task 17, Task 18, Task 21: Required ID #study-area & class .study-card -->
+    <section id="study-area" class="section-box">
+      <h2>My Study Modules</h2>
+      <p>Active learning cards built with Flexbox.</p>
+
+      <div class="card-container">
+        <!-- Card 1 (Task 8: First card, Task 21: Badge positioning) -->
+        <div class="study-card">
+          <span class="badge">In Progress</span>
+          <h3>HTML Fundamentals</h3>
+          <p>Learning semantic tags, forms, tables, and document hierarchy.</p>
+          <button class="btn">View Topic</button>
+        </div>
+
+        <!-- Card 2 (Task 5: Modifier class) -->
+        <div class="study-card card-featured">
+          <span class="badge">Featured</span>
+          <h3>CSS Box Model &amp; Flexbox</h3>
+          <p>Mastering margin, padding, borders, flex direction, and alignment.</p>
+          <button class="btn">View Topic</button>
+        </div>
+
+        <!-- Card 3 (Task 18: Card with longer text) -->
+        <div class="study-card">
+          <span class="badge">Upcoming</span>
+          <h3>Responsive Web Design</h3>
+          <p>Understanding media queries, viewport widths, flexible units, and making layouts work on mobile and desktop.</p>
+          <button class="btn">View Topic</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Task 2 & Task 8: Required ID #schedule (Table with zebra striping) -->
+    <section id="schedule" class="section-box">
+      <h2>Weekly Study Schedule</h2>
+      <p>Timetable with alternating colored rows.</p>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Day</th>
+              <th>Topic</th>
+              <th>Time</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Monday</td>
+              <td>HTML Tags &amp; Structure</td>
+              <td>2 Hours</td>
+              <td>Completed</td>
+            </tr>
+            <tr>
+              <td>Tuesday</td>
+              <td>CSS Selectors &amp; Specificity</td>
+              <td>2.5 Hours</td>
+              <td>Completed</td>
+            </tr>
+            <tr>
+              <td>Wednesday</td>
+              <td>Box Model &amp; Spacing</td>
+              <td>2 Hours</td>
+              <td>Completed</td>
+            </tr>
+            <tr>
+              <td>Thursday</td>
+              <td>Flexbox &amp; Grid Layout</td>
+              <td>3 Hours</td>
+              <td>In Progress</td>
+            </tr>
+            <tr>
+              <td>Friday</td>
+              <td>Media Queries &amp; Responsive Lab</td>
+              <td>3 Hours</td>
+              <td>Pending</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Task 2 & Task 7: Required class .resource-list (Descendant vs Child selectors) -->
+    <section id="resources" class="section-box">
+      <h2>Study Resources</h2>
+      <p>Nested list showing direct child and descendant styling.</p>
+
+      <ul class="resource-list">
+        <li>
+          <strong>HTML Documentation</strong>
+          <ol>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">MDN HTML Guide</a></li>
+            <li><a href="https://www.w3schools.com/html/" target="_blank">W3Schools HTML Tutorial</a></li>
+          </ol>
+        </li>
+        <li>
+          <strong>CSS Documentation</strong>
+          <ol>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">MDN CSS Reference</a></li>
+            <li><a href="https://css-tricks.com/" target="_blank">CSS-Tricks</a></li>
+          </ol>
+        </li>
+        <li>
+          <strong>Practice Tools</strong>
+          <ol>
+            <li><a href="https://flexboxfroggy.com/" target="_blank">Flexbox Froggy</a></li>
+            <li><a href="https://cssgridgarden.com/" target="_blank">CSS Grid Garden</a></li>
+          </ol>
+        </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- Task 2: Required ID #page-footer -->
+  <footer id="page-footer">
+    <div class="container">
+      <p>&copy; 2026 Student Study Dashboard. Built for CSS Module 4 Lab.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

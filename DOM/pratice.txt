@@ -1,0 +1,372 @@
+DOM MANIPULATION — JAVASCRIPT PRACTICE SET
+============================================
+
+INSTRUCTIONS
+------------
+1. Use the provided HTML file.
+2. Write all JavaScript in script.js.
+3. Do not modify the HTML unless absolutely necessary.
+4. Try each problem yourself before checking a solution.
+5. Use DOM methods and events wherever possible.
+
+
+LEVEL 1 — DOM SELECTION
+=======================
+
+Q1. Select the element with id "heading" and change its text to:
+    "DOM Practice Started"
+
+Q2. Select all elements with class "text" and change their font size
+    to 20px.
+
+Q3. Select the first element with class "text" and change its text to:
+    "First Paragraph Changed"
+
+Q4. Select the element with id "fruitList" and print the number of
+    <li> elements inside it in the console.
+
+Q5. When the button with id "selectionBtn" is clicked:
+    - Change the heading text.
+    - Change all paragraph texts.
+    - Change the first list item's text.
+
+
+LEVEL 2 — CONTENT & ATTRIBUTES
+==============================
+
+Q6. When "changeTextBtn" is clicked, change the text of
+    "changeText" to:
+    "Text successfully changed!"
+
+Q7. When "changeImageBtn" is clicked, change the image source of
+    "practiceImage" to another image URL.
+
+Q8. Change the alt attribute of "practiceImage".
+
+Q9. Change the href of "practiceLink" to:
+    https://www.github.com
+
+Q10. When "showNameBtn" is clicked:
+     - Get the value from "nameInput".
+     - Display it inside "nameOutput".
+
+
+LEVEL 3 — CSS MANIPULATION
+==========================
+
+Q11. When "colorBtn" is clicked, change the background color of
+     "colorBox".
+
+Q12. When "toggleClassBtn" is clicked, toggle the class "hidden"
+     on "colorBox".
+
+Q13. When "hideShowBtn" is clicked, hide/show the paragraph with
+     id "hideText".
+
+Q14. When "increaseFont" is clicked, increase the font size of
+     "fontText" by 2px.
+
+Q15. When "decreaseFont" is clicked, decrease the font size of
+     "fontText" by 2px.
+
+Q16. Create a Dark/Light Mode using "themeBtn".
+     When clicked:
+     - Change the body background.
+     - Change the body text color.
+     - Clicking again should return to the original theme.
+
+     Hint:
+     Use classList.toggle().
+
+
+LEVEL 4 — CREATE & REMOVE ELEMENTS
+==================================
+
+Q17. When "addItemBtn" is clicked:
+     - Get the value from "itemInput".
+     - Create a new <li>.
+     - Put the input value inside it.
+     - Add it to "dynamicList".
+
+Q18. After creating each <li>, add a Delete button beside it.
+
+Q19. When the Delete button is clicked, remove only that <li>.
+
+Q20. When "clearListBtn" is clicked, remove all items from
+     "dynamicList".
+
+Q21. Create a card using:
+     - cardTitle
+     - cardDescription
+
+     When "createCardBtn" is clicked:
+     - Create a new div.
+     - Add the title and description.
+     - Give the div the class "card".
+     - Add it to "cardContainer".
+
+
+LEVEL 5 — EVENTS
+================
+
+Q22. Create a counter using:
+     - plusBtn
+     - minusBtn
+     - resetBtn
+
+     Requirements:
+     - + increases the counter by 1.
+     - - decreases the counter by 1.
+     - Reset changes it back to 0.
+     - Display the value inside "counter".
+
+
+Q23. Create a character counter for "messageBox".
+
+     Requirements:
+     - Count every character typed.
+     - Display the count inside "charCount".
+     - Update the count while typing.
+
+
+Q24. Add a mouseover event to "mouseBox".
+
+     When the mouse moves over it:
+     - Change its background color.
+
+
+Q25. Add a mouseout event to "mouseBox".
+
+     When the mouse leaves:
+     - Return it to the original background color.
+
+
+Q26. Display the mouse X and Y coordinates inside
+     "mousePosition" while the mouse moves over "mouseBox".
+
+
+Q27. Detect keyboard input from "keyboardInput".
+
+     Display the key pressed inside "keyOutput".
+
+     Example:
+     Press A → "You pressed: A"
+
+
+LEVEL 6 — TO-DO LIST
+====================
+
+Q28. Create a To-Do List using:
+     - todoInput
+     - addTodoBtn
+     - todoList
+
+     Requirements:
+     - User enters a task.
+     - Clicking Add Task creates a new <li>.
+     - The task appears inside todoList.
+
+
+Q29. Add a Delete button to every task.
+
+Q30. Clicking the Delete button should remove that task.
+
+Q31. Add a Complete button to every task.
+
+Q32. Clicking Complete should mark the task as completed.
+
+     Hint:
+     Use classList.
+
+
+LEVEL 7 — IMAGE GALLERY
+=======================
+
+Q33. Select all gallery images.
+
+Q34. Add a click event to every thumbnail.
+
+Q35. When a thumbnail is clicked:
+     - Change the src of "mainImage".
+     - The clicked thumbnail's image should appear as the
+       main image.
+
+
+LEVEL 8 — TABS
+==============
+
+Q36. Select all elements with class "tabBtn".
+
+Q37. When a tab button is clicked:
+     - Hide all elements with class "tabContent".
+     - Show only the content related to the clicked tab.
+
+     Hint:
+     Use the data-tab attribute.
+
+Q38. Make sure only one tab's content is visible at a time.
+
+
+LEVEL 9 — ACCORDION
+===================
+
+Q39. Select all elements with class "question".
+
+Q40. When a question is clicked:
+     - Find its corresponding answer.
+     - Show the answer if hidden.
+     - Hide it if already visible.
+
+Q41. Make sure the same question can be opened and closed
+     repeatedly.
+
+
+LEVEL 10 — LIVE SEARCH
+======================
+
+Q42. Get the value from "searchInput" while the user is typing.
+
+Q43. Filter the products inside "productList".
+
+     Example:
+     Search "phone"
+
+     Show:
+     - iPhone
+     - Samsung Galaxy
+     - OnePlus
+
+     Hide products that don't match.
+
+Q44. Make the search case-insensitive.
+
+     Example:
+     "PHONE"
+     "Phone"
+     "phone"
+
+     should produce the same result.
+
+
+LEVEL 11 — FORM VALIDATION
+==========================
+
+Q45. Add a submit event to "practiceForm".
+
+Q46. Prevent the form from refreshing the page when submitted.
+
+Q47. Validate "userName".
+
+     Requirement:
+     - It must not be empty.
+
+Q48. Validate "userEmail".
+
+     Requirement:
+     - It must not be empty.
+     - It should contain a valid-looking email format.
+
+Q49. Validate "userPassword".
+
+     Requirement:
+     - It must not be empty.
+     - It must contain at least 6 characters.
+
+Q50. Display validation errors inside "formMessage".
+
+Q51. If all fields are valid, display:
+     "Form submitted successfully!"
+
+
+FINAL CHALLENGE
+===============
+
+Q52. Build a complete To-Do application.
+
+Requirements:
+
+     1. Add tasks.
+     2. Delete tasks.
+     3. Mark tasks as completed.
+     4. Display total number of tasks.
+     5. Display completed task count.
+     6. Add a Clear All button.
+     7. Prevent empty tasks.
+     8. Use DOM manipulation for everything.
+
+
+BONUS CHALLENGE
+===============
+
+Q53. Create a simple shopping cart using DOM manipulation.
+
+Requirements:
+
+     - Create products dynamically from a JavaScript array.
+     - Each product should have:
+         * Name
+         * Price
+         * Add to Cart button
+
+     - Clicking Add to Cart should add the product to the cart.
+     - Display the cart items.
+     - Display total price.
+     - Add a Remove button for each cart item.
+     - Update the total whenever an item is added or removed.
+
+
+IMPORTANT DOM METHODS TO PRACTICE
+=================================
+
+querySelector()
+querySelectorAll()
+getElementById()
+getElementsByClassName()
+
+textContent
+innerHTML
+value
+
+getAttribute()
+setAttribute()
+
+style
+classList.add()
+classList.remove()
+classList.toggle()
+classList.contains()
+
+createElement()
+append()
+appendChild()
+remove()
+removeChild()
+
+addEventListener()
+
+parentElement
+children
+nextElementSibling
+closest()
+
+keydown
+keyup
+click
+input
+change
+submit
+mouseover
+mouseout
+mousemove
+
+
+GOAL
+====
+
+Complete Q1–Q15 first.
+
+Then Q16–Q32.
+
+Then Q33–Q51.
+
+Finally complete Q52 and Q53 without looking at solutions.

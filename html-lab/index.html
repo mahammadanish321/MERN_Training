@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav>
+        <h1>The Comunity cookbook</h1>
+        <a href="index.html">Home</a> |
+        <a href="recipes.html">Recipes</a> |
+        <a href="contact.html">Contact Us</a> |
+        <a href="more-recipes.html">More Recipes</a>
+    </nav>
+    <hr>
+    <section>
+        <h2>Our Mission</h2>
+        <p>
+            We believe that <b>great food brings people together.</b>
+            Our mission is to create a space where anyone can share
+            their favorite recipes, learn new cooking techniques, and discover dishes from diverse culinary traditions.
+        </p>
+        <h2> What You Will Find Here </h2>
+        <div>
+            <p>
+                Our cookbook features recipes organized by category:
+            </p>
+            <ul>
+                <li>Breakfast & Brunch</li>
+                <li>Lunch & Light Meals</li>
+                <li>Dinner & Entrees</li>
+                <li>Desserts & Baking</li>
+                <li>Drinks & Smoothies</li>
+            </ul>
+        </div>
+        <hr>
+    </section>
+    <section>
+        <h2>Featured Recipe of the Week</h2>
+        <h3>Grandma Maria's Homemade Pasta</h3>
+        <i>A simple yet extraordinary dish that has been passed down through four generations.</i>
+        <p>
+            <em>A simple yet extraordinary dish that has been passed down through four generations.</em>
+        </p>
+
+        <p>
+            <strong>Prep time:</strong> 30 minutes |
+            <strong>Cook time:</strong> 15 minutes |
+            <strong>Serves:</strong> 4 people
+        </p>
+
+        <h3>Instructions:</h3>
+
+        <ol>
+            <li>Combine 2 cups of flour and 3 eggs on a clean surface.</li>
+            <li>Knead the dough for <strong>10 minutes</strong> until smooth.</li>
+            <li>Wrap in plastic and let it rest for 30 minutes.</li>
+            <li>Roll out the dough using a pasta machine or rolling pin.</li>
+            <li>Cut into your preferred shape.</li>
+            <li>Boil in salted water for 2–3 minutes until al dente.</li>
+        </ol>
+
+        <h2>Gallery</h2>
+
+        <p>Photos from our community cooking events:</p>
+
+        <div>
+            <img src="pasta.jpg" alt="A colorful homemade pasta dish served on a white ceramic plate with fresh basil">
+            <br>
+            Homemade pasta with fresh basil
+        </div>
+
+        <br>
+
+        <div>
+            <img src="vegetables.jpg"
+                alt="Fresh vegetables including tomatoes, peppers, and zucchini on a wooden cutting board">
+            <br>
+            Fresh market vegetables
+        </div>
+
+        <br>
+
+        <div>
+            <img src="pizza.jpg" alt="A freshly baked margherita pizza with melted mozzarella and green basil leaves">
+            <br>
+            Wood-fired margherita pizza
+        </div>
+    </section>
+    <section>
+        <h2>Nutrition Information</h2>
+        <p>Nutritional values per serving of Grandma Maria's Homemade Pasta:</p>
+        <table>
+            <caption>Nutrition Facts — Homemade Pasta</caption>
+            <tr>
+                <th>Nutrient</th>
+                <th>Amount</th>
+                <th>% Daily Value</th>
+            </tr>
+            <tr>
+                <td>Calories</td>
+                <td>420 kcal</td>
+                <td>21%</td>
+            </tr>
+            <tr>
+                <td>Protein</td>
+                <td>14g</td>
+                <td>28%</td>
+            </tr>
+            <tr>
+                <td>Carbohydrates</td>
+                <td>68g</td>
+                <td>23%</td>
+            </tr>
+            <tr>
+                <td>Fat</td>
+                <td>8g</td>
+                <td>10%</td>
+            </tr>
+            <tr>
+                <td>Fiber</td>
+                <td>3g</td>
+                <td>12%</td>
+            </tr>
+            <tr>
+                <td>Sodium</td>
+                <td>380mg</td>
+                <td>16%</td>
+            </tr>
+        </table>
+        <i>*Percent Daily Values are based on a 2,000 calorie diet.</i>
+        <h2>Submit Your Recipe</h2>
+
+        <p>Have a favorite recipe? Share it with our community!</p>
+
+        <form>
+
+            <fieldset>
+                <legend>Your Information</legend>
+
+                <label for="name">Full Name:</label><br>
+                <input type="text" id="name" placeholder="e.g., Maria Garcia"><br><br>
+
+                <label for="email">Email Address:</label><br>
+                <input type="email" id="email" placeholder="e.g., maria@example.com"><br><br>
+
+                <label for="phone">Phone Number (optional):</label><br>
+                <input type="tel" id="phone" placeholder="e.g., +1 555 123 4567">
+
+            </fieldset>
+
+            <fieldset>
+                <legend>Recipe Details</legend>
+
+                <label for="recipe">Recipe Name:</label><br>
+                <input type="text" id="recipe" placeholder="e.g., Grandma's Pasta"><br><br>
+
+                <label for="category">Category:</label><br>
+                <select id="category">
+                    <option>-- Select a Category --</option>
+                    <option>Breakfast</option>
+                    <option>Lunch</option>
+                    <option>Dinner</option>
+                    <option>Desserts</option>
+                    <option>Drinks</option>
+                </select><br><br>
+
+                <label>Difficulty Level:</label><br>
+                <input type="radio" name="difficulty"> Easy
+                <input type="radio" name="difficulty"> Medium
+                <input type="radio" name="difficulty"> Hard
+                <br><br>
+
+                <label for="prep">Prep Time (minutes):</label><br>
+                <input type="number" id="prep" placeholder="e.g., 30"><br><br>
+
+                <label for="date">Date You Last Made This:</label><br>
+                <input type="date" id="date"><br><br>
+
+                <label for="ingredients">Ingredients List:</label><br>
+                <textarea id="ingredients" placeholder="List each ingredient on a new line..."></textarea><br><br>
+
+                <label for="instructions">Instructions:</label><br>
+                <textarea id="instructions" placeholder="Write step-by-step instructions..."></textarea><br><br>
+
+                <label for="photo">Upload a Photo:</label><br>
+                <input type="file" id="photo">
+
+            </fieldset>
+
+            <fieldset>
+                <legend>Dietary Information</legend>
+
+                <p>Check all that apply:</p>
+
+                <input type="checkbox" id="vegetarian">
+                <label for="vegetarian">Vegetarian</label><br>
+
+                <input type="checkbox" id="vegan">
+                <label for="vegan">Vegan</label><br>
+
+                <input type="checkbox" id="gluten">
+                <label for="gluten">Gluten-Free</label><br>
+
+                <input type="checkbox" id="nut">
+                <label for="nut">Nut-Free</label><br>
+
+                <input type="checkbox" id="dairy">
+                <label for="dairy">Dairy-Free</label>
+
+            </fieldset>
+
+            <br>
+
+            <input type="checkbox" id="confirm">
+            <label for="confirm">
+                I confirm this is my original recipe and I agree to the
+                <a href="#">Terms of Service</a>.
+            </label>
+
+            <br><br>
+
+            <button type="submit">Submit Recipe</button>
+            <button type="reset">Clear Form</button>
+
+        </form>
+    </section>
+    <footer>
+        <hr>
+
+        <p>© 2024 The Community Cookbook. All rights reserved.</p>
+
+        <p>
+            <a href="#">Privacy Policy</a> |
+            <a href="#">Terms of Service</a> |
+            <a href="contact.html">Contact Us</a>
+        </p>
+
+        <p>Made with by home cooks everywhere.</p>
+    </footer>
+</body>
+
+</html>

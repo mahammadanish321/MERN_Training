@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation Practice</title>
+    <link rel="stylesheet" href = "style.css">
+</head>
+
+<body>
+
+    <h1 id="mainTitle">DOM Manipulation Practice</h1>
+
+
+    <!-- ========================= -->
+    <!-- LEVEL 1: DOM SELECTION -->
+    <!-- ========================= -->
+
+    <section>
+        <h2>1. DOM Selection</h2>
+
+        <h3 id="heading">Original Heading</h3>
+
+        <p class="text">Paragraph One</p>
+        <p class="text">Paragraph Two</p>
+        <p class="text">Paragraph Three</p>
+
+        <ul id="fruitList">
+            <li>Apple</li>
+            <li>Banana</li>
+            <li>Mango</li>
+            <li>Orange</li>
+        </ul>
+
+        <button id="selectionBtn">Practice Selection</button>
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- LEVEL 2: CONTENT & ATTRIBUTES -->
+    <!-- ========================= -->
+
+    <section>
+        <h2>2. Content & Attributes</h2>
+
+        <p id="changeText">Change my text.</p>
+
+        <button id="changeTextBtn">Change Text</button>
+
+        <br>
+
+        <img
+            id="practiceImage"
+            src="https://via.placeholder.com/300x180?text=Image+1"
+            alt="Practice Image"
+        >
+
+        <br>
+
+        <button id="changeImageBtn">Change Image</button>
+
+        <br>
+
+        <a id="practiceLink" href="https://www.google.com" target="_blank">
+            Open Link
+        </a>
+
+        <br>
+
+        <input
+            id="nameInput"
+            type="text"
+            placeholder="Enter your name"
+        >
+
+        <button id="showNameBtn">Show Name</button>
+
+        <p id="nameOutput"></p>
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- LEVEL 3: CSS MANIPULATION -->
+    <!-- ========================= -->
+
+    <section>
+        <h2>3. CSS Manipulation</h2>
+
+        <div id="colorBox" class="box"></div>
+
+        <button id="colorBtn">Change Color</button>
+        <button id="toggleClassBtn">Toggle Class</button>
+
+        <p id="hideText">
+            Try to hide and show me.
+        </p>
+
+        <button id="hideShowBtn">Hide / Show</button>
+
+        <br>
+
+        <p id="fontText">
+            Change my font size.
+        </p>
+
+        <button id="increaseFont">Increase</button>
+        <button id="decreaseFont">Decrease</button>
+
+        <br>
+
+        <button id="themeBtn">Dark / Light Mode</button>
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- LEVEL 4: CREATE ELEMENTS -->
+    <!-- ========================= -->
+
+    <section>
+        <h2>4. Create & Remove Elements</h2>
+
+        <input
+            id="itemInput"
+            type="text"
+            placeholder="Enter item"
+        >
+
+        <button id="addItemBtn">Add Item</button>
+
+        <ul id="dynamicList"></ul>
+
+        <button id="clearListBtn">Clear All</button>
+
+        <hr>
+
+        <h3>Create Card</h3>
+
+        <input
+            id="cardTitle"
+            type="text"
+            placeholder="Card title"
+        >
+
+        <input
+            id="cardDescription"
+            type="text"
+            placeholder="Card description"
+        >
+
+        <button id="createCardBtn">Create Card</button>
+
+        <div id="cardContainer"></div>
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- LEVEL 5: EVENTS -->
+    <!-- ========================= -->
+
+    <section>
+        <h2>5. Events</h2>
+
+        <h3 id="counter">0</h3>
+
+        <button id="plusBtn">+</button>
+        <button id="minusBtn">-</button>
+        <button id="resetBtn">Reset</button>
+
+        <hr>
+
+        <textarea
+            id="messageBox"
+            rows="5"
+            cols="40"
+            placeholder="Write something..."
+        ></textarea>
+
+        <p>
+            Characters:
+            <span id="charCount">0</span>
+        </p>
+
+        <hr>
+
+        <div
+            id="mouseBox"
+            class="box"
+        >
+            Move mouse here
+        </div>
+
+        <p id="mousePosition"></p>
+
+        <hr>
+
+        <input
+            id="keyboardInput"
+            type="text"
+            placeholder="Press any key"
+        >
+
+        <p id="keyOutput"></p>
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- LEVEL 6: TODO LIST -->
+    <!-- ========================= -->
+
+    <section>
+        <h2>6. To-Do List</h2>
+
+        <input
+            id="todoInput"
+            type="text"
+            placeholder="Enter task"
+        >
+
+        <button id="addTodoBtn">Add Task</button>
+
+        <ul id="todoList"></ul>
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- LEVEL 6: IMAGE GALLERY -->
+    <!-- ========================= -->
+
+    <section>
+        <h2>7. Image Gallery</h2>
+
+        <div class="gallery">
+
+            <img
+                src="https://via.placeholder.com/400x250?text=Image+1"
+                alt="Image 1"
+            >
+
+            <img
+                src="https://via.placeholder.com/400x250?text=Image+2"
+                alt="Image 2"
+            >
+
+            <img
+                src="https://via.placeholder.com/400x250?text=Image+3"
+                alt="Image 3"
+            >
+
+            <img
+                src="https://via.placeholder.com/400x250?text=Image+4"
+                alt="Image 4"
+            >
+
+        </div>
+
+        <br>
+
+        <img
+            id="mainImage"
+            src="https://via.placeholder.com/400x250?text=Main+Image"
+            alt="Main Image"
+        >
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- LEVEL 6: TABS -->
+    <!-- ========================= -->
+
+    <section>
+        <h2>8. Tabs</h2>
+
+        <button class="tabBtn" data-tab="home">Home</button>
+        <button class="tabBtn" data-tab="about">About</button>
+        <button class="tabBtn" data-tab="contact">Contact</button>
+
+        <div id="home" class="tabContent">
+            <h3>Home</h3>
+            <p>This is the home section.</p>
+        </div>
+
+        <div id="about" class="tabContent hidden">
+            <h3>About</h3>
+            <p>This is the about section.</p>
+        </div>
+
+        <div id="contact" class="tabContent hidden">
+            <h3>Contact</h3>
+            <p>This is the contact section.</p>
+        </div>
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- LEVEL 6: ACCORDION -->
+    <!-- ========================= -->
+
+    <section>
+        <h2>9. Accordion</h2>
+
+        <div>
+            <button class="question">
+                What is JavaScript?
+            </button>
+
+            <p class="answer hidden">
+                JavaScript is a programming language used to make
+                web pages interactive.
+            </p>
+        </div>
+
+        <div>
+            <button class="question">
+                What is the DOM?
+            </button>
+
+            <p class="answer hidden">
+                DOM stands for Document Object Model.
+            </p>
+        </div>
+
+        <div>
+            <button class="question">
+                What is an Event?
+            </button>
+
+            <p class="answer hidden">
+                An event represents something that happens in the browser.
+            </p>
+        </div>
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- LEVEL 7: SEARCH -->
+    <!-- ========================= -->
+
+    <section>
+        <h2>10. Live Search</h2>
+
+        <input
+            id="searchInput"
+            type="text"
+            placeholder="Search products..."
+        >
+
+        <ul id="productList">
+            <li>iPhone</li>
+            <li>Samsung Galaxy</li>
+            <li>OnePlus</li>
+            <li>MacBook</li>
+            <li>Dell Laptop</li>
+            <li>HP Laptop</li>
+            <li>iPad</li>
+            <li>AirPods</li>
+        </ul>
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- LEVEL 7: FORM VALIDATION -->
+    <!-- ========================= -->
+
+    <section>
+        <h2>11. Form Validation</h2>
+
+        <form id="practiceForm">
+
+            <input
+                id="userName"
+                type="text"
+                placeholder="Username"
+            >
+
+            <br>
+
+            <input
+                id="userEmail"
+                type="email"
+                placeholder="Email"
+            >
+
+            <br>
+
+            <input
+                id="userPassword"
+                type="password"
+                placeholder="Password"
+            >
+
+            <br>
+
+            <button type="submit">
+                Submit
+            </button>
+
+        </form>
+
+        <p id="formMessage"></p>
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- JAVASCRIPT -->
+    <!-- ========================= -->
+
+    <script src="script.js"></script>
+
+</body>
+</html>

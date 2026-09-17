@@ -1,0 +1,113 @@
+/* Simple Beginner CSS for Resume */
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f0f0f0;
+  margin: 20px 0;
+  padding: 0;
+  color: #111111;
+}
+
+.cv-container {
+  width: 800px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 30px 40px;
+  border: 1px solid #cccccc;
+  box-sizing: border-box;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.header h1 {
+  font-size: 26px;
+  margin: 0 0 6px 0;
+  letter-spacing: 1px;
+}
+
+.header .contact-info {
+  font-size: 13px;
+  margin: 4px 0;
+}
+
+.header .links {
+  font-size: 13px;
+  margin: 4px 0;
+}
+
+.header a {
+  color: #0000ee;
+  text-decoration: underline;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #000000;
+  margin: 12px 0 16px 0;
+}
+
+/* Section */
+.section {
+  margin-bottom: 16px;
+}
+
+h2 {
+  font-size: 16px;
+  margin: 0 0 8px 0;
+  padding-bottom: 2px;
+  border-bottom: 1px solid #000000;
+  color: #000000;
+}
+
+/* Items & Alignment */
+.project-item, .experience-item, .education-item {
+  margin-bottom: 12px;
+}
+
+.item-title-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+
+.item-title {
+  color: #000000;
+}
+
+.item-link a, .links a, .contact-info a {
+  color: #0000ee;
+}
+
+.item-right {
+  font-size: 13px;
+}
+
+.institution {
+  font-size: 13px;
+  font-style: italic;
+}
+
+.location {
+  font-size: 13px;
+}
+
+/* Bullet Points */
+ul {
+  margin: 3px 0 8px 0;
+  padding-left: 20px;
+}
+
+li {
+  font-size: 13px;
+  line-height: 1.4;
+  margin-bottom: 3px;
+}
+
+.skills-list li {
+  margin-bottom: 4px;
+}

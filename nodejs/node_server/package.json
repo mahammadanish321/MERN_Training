@@ -1,12 +1,12 @@
 {
-  "name": "nodebasics",
+  "name": "node_server",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "",
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev":"nodemon index.js"
   },
   "keywords": [],
   "author": "",

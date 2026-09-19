@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- ⚡ Theme flash prevention — must run before ANY CSS is parsed -->
+  <script>!function () { try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t) } catch (e) { } }();</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#2c5f5d" />
+  <title>Mahammad Anish | Full Stack Developer Portfolio</title>
+  <link rel="canonical" href="https://www.mahammadanish.me/" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/portfolio.css" />
+  <link rel="stylesheet" href="css/modal-styles.css" />
+  <link rel="stylesheet" href="css/chatbot.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon-96x96.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+  <link rel="manifest" href="assets/site.webmanifest" />
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <!-- Loading Screen -->
+  <div class="loader" id="loader">
+    <div class="loader-content">
+      <img src="assets/favicon.ico" alt="Loading..." class="loader-icon">
+      <p class="loader-text">Loading Portfolio...</p>
+    </div>
+  </div>
+
+  <!-- Particle Background -->
+  <div class="particles" id="particles"></div>
+
+  <!-- Liquid Glass SVG Distortion Filter (hidden, referenced in CSS) -->
+  <svg style="display:none;position:absolute;width:0;height:0" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="glass-distortion" x="-10%" y="-10%" width="120%" height="120%" filterUnits="objectBoundingBox">
+        <feTurbulence type="fractalNoise" baseFrequency="0.001 0.005" numOctaves="1" seed="17" result="turbulence" />
+        <feComponentTransfer in="turbulence" result="mapped">
+          <feFuncR type="gamma" amplitude="1" exponent="10" offset="0.5" />
+          <feFuncG type="gamma" amplitude="0" exponent="1" offset="0" />
+          <feFuncB type="gamma" amplitude="0" exponent="1" offset="0.5" />
+        </feComponentTransfer>
+        <feGaussianBlur in="turbulence" stdDeviation="3" result="softMap" />
+        <feSpecularLighting in="softMap" surfaceScale="5" specularConstant="1" specularExponent="100"
+          lightingColor="white" result="specLight">
+          <fePointLight x="-200" y="-200" z="300" />
+        </feSpecularLighting>
+        <feComposite in="specLight" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="litImage" />
+        <feDisplacementMap in="SourceGraphic" in2="softMap" scale="80" xChannelSelector="R" yChannelSelector="G" />
+      </filter>
+    </defs>
+  </svg>
+
+
+
+  <!-- UI Dock (Replaces FAB & Scattered Buttons) -->
+  <div class="ui-dock-container">
+    <div class="ui-dock">
+
+      <!-- View Counter (Badge Style) -->
+      <div class="ui-dock-item view-counter-dock" id="viewCountDock" title="Total Views">
+        <i class="ph ph-eye"></i>
+        <span id="viewCountDisplay"><span class="loading-dots"><span></span><span></span><span></span></span></span>
+      </div>
+
+      <div class="ui-dock-separator"></div>
+
+      <!-- Sound Toggle -->
+      <button class="ui-dock-item" onclick="toggleSound()" title="Toggle Sound">
+        <i class="ph ph-speaker-high" id="soundIcon"></i>
+      </button>
+
+      <!-- Chatbot -->
+      <button class="ui-dock-item" onclick="toggleChatbot()" title="Ask AI">
+        <i class="ph ph-robot"></i>
+      </button>
+
+      <!-- Download CV -->
+      <button class="ui-dock-item" onclick="downloadCV()" title="Download CV">
+        <i class="ph ph-file-arrow-down"></i>
+      </button>
+
+      <!-- Share -->
+      <button class="ui-dock-item" onclick="shareProfile()" title="Share Profile">
+        <i class="ph ph-share-network"></i>
+      </button>
+
+      <div class="ui-dock-separator"></div>
+
+      <!-- Admin Access -->
+      <button class="ui-dock-item" onclick="openIndexLogin()" title="Admin Access">
+        <i class="ph ph-lock-key"></i>
+      </button>
+
+    </div>
+  </div>
+
+  <!-- Chatbot Widget -->
+  <div class="chatbot-container" id="chatbotContainer">
+    <div class="chatbot-header" id="chatbotHeader">
+      <div class="chatbot-title">
+        <i class="fas fa-user-circle"></i> anishfolio
+      </div>
+      <button onclick="toggleChatbot()" class="chatbot-close-btn">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <div class="chatbot-messages" id="chatbotMessages">
+      <div class="chat-message bot">
+        Hello! I'm Anish. Ask me anything about his projects, skills, or experience!
+      </div>
+    </div>
+
+    <div class="chatbot-input-area">
+      <input type="text" id="chatInput" class="chatbot-input-field" placeholder="Ask a question..."
+        onkeypress="if(event.key === 'Enter') sendMessage()">
+      <button onclick="sendMessage()" id="chatSendBtn" class="chatbot-send-btn">
+        <i class="fas fa-paper-plane"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" id="scrollToTop">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <a href="index.html" class="logo">anishfolio</a>
+    <div class="nav-links" id="navLinks">
+      <a href="#home" class="nav-link active">Home</a>
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#portfolio" class="nav-link">Projects</a>
+      <a href="#achievements" class="nav-link">Achievements</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </div>
+    <button class="nav-toggle" id="navToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <!-- Background Image -->
+    <div class="hero-background">
+      <img src="assets/Picsart_26-02-15_16-14-21-484.png" alt="Anish - Full Stack Developer" />
+    </div>
+
+    <!-- Optional Overlay for better text contrast -->
+    <div class="hero-overlay"></div>
+
+
+
+    <!-- Desktop/Tablet Layout -->
+    <div class="hero-container">
+      <div class="hero-left">
+        <div class="hero-badge">
+          <i class="fas fa-star"></i>
+          Available for Internships & Freelance Projects
+        </div>
+
+        <h1 class="hero-title">
+          Hey, I’m <span class="highlight">Anish</span><br>
+          Full Stack Developer
+        </h1>
+
+        <div class="hero-email">
+          anish130905@gmail.com
+        </div>
+
+        <div class="hero-experience">
+          <div class="experience-number">2</div>
+          <div class="experience-text">
+            Years<br>
+            Computer Science & Engineering Student<br>
+            Building projects, learning systems, improving every day.
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <p class="hero-description">
+          I’m a Computer Science & Engineering student and a growth-focused Full Stack Developer.<br>
+          I build real-world web applications using JavaScript, Node.js, Express, and MongoDB,<br>
+          and I’m actively learning React to strengthen my frontend skills.
+        </p>
+
+        <div class="hero-badge-cert">
+          <div class="cert-icon">🏆</div>
+          <div class="cert-text">
+            <br>
+            MERN STACK<br>
+            FULL STACK DEVELOPER
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services animate-on-scroll" id="services">
+    <div class="section-header">
+      <span class="section-badge">What I Build</span>
+      <h2 class="section-title">What I Build</h2>
+      <p class="section-description">
+        I build comprehensive web solutions, focusing on backend logic, clean architecture, and responsive user
+        interfaces.
+      </p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-layer-group"></i>
+        </div>
+        <h3 class="service-title">Full Stack Web Applications</h3>
+        <p class="service-description">
+          I build complete web applications using Node.js, Express.js, MongoDB, and modern JavaScript.
+          From backend logic to frontend structure, I focus on clean architecture and scalability.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-server"></i>
+        </div>
+        <h3 class="service-title">Backend & API Development</h3>
+        <p class="service-description">
+          I develop RESTful APIs with secure JWT-based authentication, database integration,
+          and deployment-ready backend systems using Express and MongoDB.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-code"></i>
+        </div>
+        <h3 class="service-title">Frontend Web Development</h3>
+        <p class="service-description">
+          I create responsive and visually clean user interfaces using HTML, CSS, and JavaScript (ES6+).
+          I’m currently learning React to build more dynamic and scalable frontend experiences.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section class="portfolio animate-on-scroll" id="portfolio">
+    <div class="section-header">
+      <span class="section-badge">My Work</span>
+      <h2 class="section-title">Featured Projects</h2>
+      <p class="section-description">
+        These projects represent my learning journey as a full stack developer.
+        Each one is built to understand real-world problems, backend logic,
+        and how complete systems work together.
+      </p>
+    </div>
+
+    <div id="portfolioGrid" class="portfolio-grid carousel-view">
+      <!-- Projects will be loaded here -->
+    </div>
+
+    <!-- Carousel Controls -->
+    <div class="carousel-controls">
+      <button id="prevProjectBtn" class="carousel-btn" aria-label="Previous Projects">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <button id="nextProjectBtn" class="carousel-btn" aria-label="Next Projects">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+
+    <div id="seeAllProjectsContainer" style="text-align: center; margin-top: 30px; display: none;">
+      <a href="projects.html" class="btn btn-primary">See All Projects <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </section>
+
+
+  <!-- Achievements Section -->
+  <section class="achievement-gallery animate-on-scroll" id="achievements">
+    <div class="section-header">
+      <span class="section-badge">Recognition</span>
+      <h2 class="section-title">Achievements</h2>
+      <p class="section-description">
+        Milestones and recognitions granted for my work and contributions.
+      </p>
+    </div>
+
+    <div class="gallery-container">
+      <div class="gallery-track" id="achievementsTrack">
+        <!-- Achievements loaded dynamically -->
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Contact Section -->
+  <section class="contact animate-on-scroll" id="contact">
+    <div class="contact-container">
+      <div class="contact-info">
+        <h2>Let’s Build Something Real</h2>
+        <p>
+          I’m currently looking for internship opportunities and freelance projects
+          where I can contribute, learn, and grow as a full stack developer.
+          If you’re building something interesting, I’d love to be part of it.
+        </p>
+
+        <div class="contact-methods">
+          <div class="contact-method">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <h4>Email</h4>
+              <p>anish130905@gmail.com</p>
+            </div>
+          </div>
+
+          <div class="contact-method">
+            <i class="fas fa-phone"></i>
+            <div>
+              <h4>Phone</h4>
+              <p>7029681832</p>
+            </div>
+          </div>
+
+          <div class="contact-method">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <h4>Location</h4>
+              <p>Kolkata, India</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="social-links">
+          <a href="https://github.com/mahammadanish321" class="social-link" aria-label="GitHub" target="_blank"
+            rel="noopener noreferrer">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/mahammad-anish-41aa70314/" class="social-link" aria-label="LinkedIn"
+            target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://x.com/anish__ne" class="social-link" aria-label="Twitter" target="_blank"
+            rel="noopener noreferrer">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://www.instagram.com/anish_ne/" class="social-link" aria-label="Instagram" target="_blank"
+            rel="noopener noreferrer">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#" class="social-link" aria-label="Dribbble" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-dribbble"></i>
+          </a>
+        </div>
+      </div>
+
+      <form class="contact-form" id="contactForm">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Your full name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" placeholder="Project inquiry" required>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Tell me about your project..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%;">
+          <i class="fas fa-paper-plane"></i>
+          Send Message
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Project Details Modal (Rebuilt) -->
+  <div id="projectModal" class="project-modal-overlay">
+    <div class="project-modal-content">
+      <button class="close-project-modal" onclick="closeProjectModal()">&times;</button>
+
+      <div class="project-modal-header">
+        <img id="modalImage" src="" alt="Project Preview">
+      </div>
+
+      <div class="project-modal-body">
+        <div class="modal-info-bar">
+          <h2 id="modalTitle">Project Title</h2>
+          <div id="modalTechStack" class="modal-tech-stack"></div>
+          <div id="modalDate" class="modal-date" style="display:none;"></div>
+        </div>
+
+        <div class="modal-description">
+          <p id="modalDescription">Project description goes here...</p>
+        </div>
+
+        <div class="modal-actions">
+          <a id="modalLiveLink" href="#" target="_blank" class="btn btn-primary">
+            Visit Website <i class="fas fa-external-link-alt"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer style="padding: 2rem; text-align: center; border-top: 1px solid var(--border-color); margin-top: 50px;">
+    <p style="color: var(--text-secondary);">&copy; 2026 Anish. All rights reserved.</p>
+    <a href="admin.html" class="admin-footer-link">Admin Access</a>
+  </footer>
+
+
+
+
+  <!-- Login Overlay for Admin Access -->
+  <div id="indexLoginOverlay" class="login-overlay"
+    style="display: none; justify-content: center; align-items: center; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.75); backdrop-filter: blur(16px) saturate(180%); -webkit-backdrop-filter: blur(16px) saturate(180%); z-index: 20000;">
+    <div class="login-box"
+      style="background: rgba(var(--bg-primary-rgb), 0.95); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 2.5rem; border-radius: 20px; text-align: center; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3); border: 1px solid rgba(255, 255, 255, 0.1); width: 360px; max-width: 90%;">
+      <h2 style="margin-bottom: 1.5rem; color: var(--text-primary); font-size: 1.8rem; font-weight: 700;">Admin Access
+      </h2>
+      <div style="position: relative; width: 100%; margin-bottom: 1.5rem;">
+        <input type="password" id="indexAdminPassword" placeholder="Enter Password" class="admin-password-input">
+        <i class="fas fa-eye" id="togglePasswordBtn" onclick="togglePasswordVisibility()"></i>
+      </div>
+      <div style="display: flex; gap: 12px; justify-content: center;">
+        <button onclick="checkIndexPassword()" class="btn btn-primary"
+          style="padding: 12px 28px; background: var(--primary-color); color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">Unlock</button>
+        <button onclick="closeIndexLogin()" class="btn btn-secondary"
+          style="padding: 12px 28px; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(8px); border: 1px solid rgba(0, 0, 0, 0.2); color: var(--text-primary); border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">Cancel</button>
+      </div>
+      <p id="indexLoginError" style="color: #ef4444; margin-top: 12px; font-size: 0.9rem; font-weight: 500;"></p>
+    </div>
+  </div>
+
+  <script src="js/email.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    // API Configuration
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+      window.API_BASE = 'http://localhost:5000';
+    } else {
+      window.API_BASE = 'https://anishfolio-backend.onrender.com';
+    }
+
+
+    function togglePasswordVisibility() {
+      const passwordInput = document.getElementById('indexAdminPassword');
+      const toggleBtn = document.getElementById('togglePasswordBtn');
+
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        toggleBtn.classList.remove('fa-eye');
+        toggleBtn.classList.add('fa-eye-slash');
+      } else {
+        passwordInput.type = 'password';
+        toggleBtn.classList.remove('fa-eye-slash');
+        toggleBtn.classList.add('fa-eye');
+      }
+    }  
+  </script>
+  <script src="js/script.js"></script>
+  <script type="module">
+    import { view } from './js/view.js';
+    view();
+  </script>
+  <script>
+    // Fail-safe Loader Removal
+    window.addEventListener('load', function () {
+      var loader = document.getElementById('loader');
+      if (loader) {
+        loader.style.opacity = '0';
+        loader.style.pointerEvents = 'none';
+        setTimeout(function () {
+          loader.style.display = 'none';
+        }, 100);
+      }
+    });
+  </script>
+
+</body>
+
+
+</html>

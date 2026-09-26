@@ -1,6 +1,5 @@
-const { mongoose } = require('mongoose');
+const mongoose = require('mongoose');
 const { APP_VERSION, DEPLOYED_AT } = require('../utils/AppVersion');
-const { applyTimestamps } = require('../models/productModel');
 
 // Controllers contain request-handling logic. A health handler reports whether
 // the API process is alive and what state Mongoose reports for the database.
@@ -14,19 +13,20 @@ const getHealth = (req, res) => {
     2: 'connecting',
     3: 'disconnecting',
   };
+
   res.json({
     status: 'OK',
     message: 'backend API is running',
     timestamp: new Date().toISOString(),
-    environment: proccess.env.NODE_ENV || 'development',
-    databace: dbStatusMap[dbState] || 'unknow',
+    environment: process.env.NODE_ENV || 'development',
+    database: dbStatusMap[dbState] || 'unknown',
     uptime: process.uptime(),
     memoryUsage: {
       rss: `${(process.memoryUsage().rss / 1024 / 1024).toFixed(2)} MB`,
       heapUsed: `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB`,
       heapTotal: `${(process.memoryUsage().heapTotal / 1024 / 1024).toFixed(2)} MB`,
     },
-  })
+  });
 };
 
 // This handler exposes build/runtime information separately from health data.

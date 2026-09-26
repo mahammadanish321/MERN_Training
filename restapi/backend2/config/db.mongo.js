@@ -31,16 +31,22 @@ const encureDatabace = (res) => {
     if (mongoose.connection.readyState !== 1) {
         res.status(503).json({
             success: false,
-            error: "'Database is not configured or unavailable. Add a valid MONGODB_URI to enable data operations.',"
+            error: 'Database is not configured or unavailable. Add a valid MONGODB_URI to enable data operations.'
         });
         return false;
     }
     return true;
 };
 
+// Keep the original helper name for compatibility, and expose the corrected
+// common spelling as a second alias. This avoids breaking older code while
+// allowing new controllers to use a readable name consistently.
+const ensureDatabase = encureDatabace;
+
 // Export the connection helpers for the server and controllers.
 module.exports = {
     connectDB,
     encureDatabace,
+    ensureDatabase,
     inMongoConfigured
 };

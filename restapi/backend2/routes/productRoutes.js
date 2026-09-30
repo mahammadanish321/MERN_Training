@@ -3,10 +3,10 @@ const router = express.Router();
 const productController = require('../controllers/productController');
 
 // Each route passes a matching request to the corresponding controller method.
-router.get('/products', productController.getAllProducts);
-router.post('/products', productController.createProduct);
-router.get('/products/:id', productController.getProductById);
-router.put('/products/:id', productController.updateProductById);
-router.delete('/products/:id', productController.deleteProductById);
+router.get('/', productController.getAllProducts);
+router.post('/', productController.createProduct);
+router.get('/:id', productController.getProductById);
+router.put('/:id', productController.updateProductById);
+router.delete('/:id', productController.deleteProductById);
 
 module.exports = router;

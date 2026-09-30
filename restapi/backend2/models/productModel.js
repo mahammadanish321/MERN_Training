@@ -18,9 +18,8 @@ const productSchema = new mongoose.Schema({
 })
 
 // Update the timestamp automatically before every document save.
-productSchema.pre('save', function (next) {
+productSchema.pre('save', function () {
     this.updatedAt = Date.now();
-    next();
 });
 
 // Turn the schema blueprint into a Product model for database operations.

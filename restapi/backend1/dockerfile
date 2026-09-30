@@ -1,0 +1,18 @@
+FROM node:20-alpine
+
+WORKDIR /app
+
+# 1. Copy package files first
+COPY package*.json ./
+
+# 2. Install all dependencies (express, mongoose, etc.) inside the container
+RUN npm install
+
+# 3. Copy ALL your project files and folders (routes, controllers, models, server.js)
+COPY . .
+
+# 4. Expose your port (change 5000 if your server.js uses a different port like 8000 or 3000)
+EXPOSE 5000
+
+# 5. Start the server
+CMD ["node", "server.js"]

@@ -21,11 +21,9 @@ const userSchema = new mongoose.Schema({
     updatedAt: { type: Date, default: Date.now },
 });
 
-// This hook runs before a document is saved. `this` is the user being saved,
-// and calling next() tells Mongoose that it may continue with the save.
-userSchema.pre('save', function (next) {
+// This hook runs before a document is saved. `this` is the user being saved.
+userSchema.pre('save', function () {
     this.updatedAt = Date.now();
-    next();
 });
 
 // Compiling the schema creates the User model used by controllers for queries.

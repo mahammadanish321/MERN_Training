@@ -1,7 +1,7 @@
 const express = require('express');
 const dbconnection = require('./config/db.mongo.js')
 // const mongoose = require('mongoose');
-const user_routes = require('/home/mahammadanish/Coding/MERN/myMERN/restapi/backend1/routes/user.routes.js')
+const user_routes = require('./routes/user.routes.js')
 
 const cors = require('cors');
 const helmet = require('helmet');

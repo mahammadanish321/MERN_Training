@@ -3,7 +3,7 @@ require('dotenv').config();
 
 // Check the environment before attempting a connection. This allows the API
 // to start for health checks even when a database URL has not been supplied.
-const inMongoConfigured = () => {
+const isMongoConfigured = () => {
     return (
         typeof process.env.MONGODB_URI === 'string' && process.env.MONGODB_URI.trim() !== '' && !process.env.MONGODB_URI.includes('<')
     );
@@ -12,7 +12,7 @@ const inMongoConfigured = () => {
 // Connect once during application startup. Await pauses this function until
 // MongoDB accepts or rejects the connection attempt.
 const connectDB = async () => {
-    if (!inMongoConfigured()) {
+    if (!isMongoConfigured()) {
         console.warn('Warning: MONGODB_URI is not configured. Starting the API without a database connection.');
         return;
     }
@@ -43,5 +43,5 @@ const ensureDatabase = (res) => {
 module.exports = {
     connectDB,
     ensureDatabase,
-    inMongoConfigured
+    isMongoConfigured
 };

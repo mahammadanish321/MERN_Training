@@ -23,7 +23,10 @@ app.use('/api',user_routes);
 
 
 const PORT = process.env.PORT || 8000;
+
+
 dbconnection().then(() => {
+    
     app.listen(PORT, () => {
         console.log(`server is running on port http://localhost:${PORT}`);
 

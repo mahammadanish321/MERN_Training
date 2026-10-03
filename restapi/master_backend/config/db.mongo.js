@@ -14,7 +14,9 @@ const isMongoConfigured = () => {
 const connectDB = async () => {
     if (!isMongoConfigured()) {
         console.warn('Warning: MONGODB_URI is not configured. Starting the API without a database connection.');
-        return;
+        return{
+            // process.exit()
+        };
     }
 
     try {
